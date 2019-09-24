@@ -1,0 +1,48 @@
+#form_buscador{
+    width: 230px;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
+#fiel_buscador{
+    display: inline-block;
+    background: #ffffff;
+    border:1px solid #333333;
+    border-radius:10px;
+    padding: 0 0 0 0; 
+}
+
+ #input_buscador, #btn_buscador{
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 25px;
+    padding: 0;
+}
+
+ #input_buscador{
+    border: none;
+    
+    color: #666666;
+}
+
+#btn_buscador{
+    font-size: 1.4rem;
+    border: none;
+    width: 40px;
+    background: #d72323;
+}
+#btn_buscador:hover{
+
+   background: #d14a48;
+}
+
+
+.fa-search{
+    color:#ffffff
+}
+
+#input_buscador:focus{
+    outline: none;
+}
+

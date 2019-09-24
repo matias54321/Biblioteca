@@ -1,0 +1,39 @@
+.rating { 
+    border: none;
+    float: left;
+    margin-bottom: 10px;
+}
+.rating > input { 
+    display: none; 
+} 
+.rating > label:before { 
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: '\f005';
+}
+.rating > .half:before { 
+    content: '\f089';
+    position: absolute;
+}
+.rating > label { 
+    color: rgb(175, 174, 174); 
+   float: right; 
+}
+
+/*Interación*/
+.rating > input:checked ~ label, /* mostrar estrella dorada al clickear*/
+.rating:not(:checked) > label:hover, /* hover en la estrella actual */
+.rating:not(:checked) > label:hover ~ label { /* hover estrellas anteriores en la lista */ 
+    color: #FFD700;  
+} 
+
+.rating > input:checked + label:hover, /* hover strella actual cuando cambia el rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* iluminar la selección actual */
+.rating > input:checked ~ label:hover ~ label {
+     color: #FFED85;  
+} 
+
+  

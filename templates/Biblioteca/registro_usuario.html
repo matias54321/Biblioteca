@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% block titulo %}
+    Sesión
+{% endblock titulo %}
+
+{% load static %}
+
+{% block dependencias_individuales %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/PagFormularios/General.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/PagFormularios/ContenidoFormulario.css' %}">
+
+    <!--Include Animate.css-->
+    <link rel="stylesheet" href="{% static 'Css/Animate.css' %}">
+
+    <!--Include jQuery UI-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock dependencias_individuales %}
+
+{% block Pagina %}
+    <div id="divBackground"></div>
+    <div id="Contenedor" class="animated flipInX delay-1s">
+
+        <div class="Registro">
+            <div class="row">
+                <h1>Registro</h1>
+                <button class="back" onclick="terminarRegistro();limpiarDeValidacion();">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </button>
+            </div>
+            
+            <form id="formReg" action="">
+                <p><label for="">Nombres</label><input id="nombresReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p><label for="">Apellidos</label><input id="apellidosReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p><label for="">Nombre de Usuario</label><input id="usuarioReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p><label for="">Fecha de nacimiento</label><input id="datepicker" autocomplete="off" type="text">
+                    <script>
+                        $(function () {
+                            $('#datepicker').datepicker({
+                                dateFormat: "dd-mm-yy"
+                            });
+                        });
+                    </script>
+                </p>
+                <p><label for="">contraseña</label><input id="contraseniaReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p><label for="">Repetir contraseña</label><input id="reContraseniaReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p><label for="">E-mail</label><input id="emailReg" onchange="validar()" autocomplete="off" type="text"></p>
+                <p id="boton"><button type="button" class="formButton"
+                        onclick="subir()">Enviar</button></p>
+            </form>
+        </div>
+
+        <div class="Login">
+            <h1>Iniciar sesión</h1>
+            <form id="formLog" method="POST" action="{% url '' %}">
+                {% csrf_token %}
+                <p><label for="">Usuario</label><input type="text"></p>
+                <p><label for="">Contraseña</label><input type="text"></p>
+                <p id="botonLog">
+                    <button type="submit" class="formButton" onclick="Animar()">Iniciar</button>
+                    <a id="crearcuenta" onclick="mostrarRegistro()">¿No tienes una cuenta?</a>
+                    <a id="olvidócontraseña">¿Olvidaste tu contraseña?</a>
+                </p>
+            </form>
+        </div>
+
+
+        <script src="{% static 'Js/scriptFormularios.js' %}"></script>
+    </div>
+{% endblock Pagina %}

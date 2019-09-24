@@ -1,0 +1,159 @@
+.Registro{
+    display: none;
+    
+    
+}
+#Contenedor{    
+    background-color:rgba(37, 35, 12, 0.8); 
+    margin-top: 10px;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    padding-left: 1%; padding-right: 1%;
+    border:1.5px solid rgb(255, 255, 255, .5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(255, 255, 255, .5);
+    z-index: 0;
+
+}
+#Contenedor h1{
+    color: #b17b16;
+    font-family: 'Libre Baskerville', serif;
+}
+.Registro,
+.Login{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.Registro form{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2%;
+    grid-template-areas:"nombres apellidos"
+                        "usuario fechnacimiento"
+                        "contraseña repetircontraseña"
+                        "email captcha"
+                        "boton captcha";    
+    margin: auto;    
+}
+.Login form{
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:"nombreusuario"
+                        "Contraseña"
+                        "ingresar";
+    margin: auto;
+}
+.Registro label,
+.Login label{
+    color: white;
+    font-size: .8rem;
+}
+.Registro form input,
+.Registro form button,
+.Login form input,
+.Login form button{    
+    width: 100%;
+    height: 1.5em;
+    font-size: 80%;
+    color: #ffffff;
+    background: none;
+    outline: none;    
+    border:0px;
+    border-bottom: 2px solid rgba(180, 32, 52, 0.836);
+}
+
+.Registro form p{
+    margin: 0;
+    padding: 5px;    
+}
+.Registro form p .formButton,
+.Login form p .formButton{    
+    background-color: rgba(180, 32, 52, 0.836);
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    padding: -5px;
+    text-align: center;
+    height: 100%;
+}
+#boton{
+   grid-area: boton;
+   margin-bottom: 2%;
+}
+#botonLog{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr .5fr .5fr;
+    grid-template-areas:"buttonA buttonA"
+                        "linkB linkB"
+                        "linkC linkC";
+}
+.Login form p .formButton{
+    grid-area:buttonA;  
+    
+}
+#botonLog #crearcuenta{
+    grid-area: linkB;
+    color: rgb(59, 189, 250);       
+}
+#botonLog #crearcuenta:hover{    
+    color: #ff0000;
+}
+#botonLog #olvidócontraseña{
+    grid-area: linkC;
+    color: rgb(59, 189, 250);
+}
+.Registro form p button:hover,
+.Registro form p button:focus,
+.Login form p button:hover,
+.Login form p button:focus{
+    background: rgba(161, 30, 48, 0.836);
+    color: #000000;
+}
+
+/*Validaciones*/
+form > p >.correcto{
+    border-bottom-color: rgba(41, 212, 55, 0.836);
+}
+form > p > .medio{
+    border-bottom-color: rgba(253, 146, 6, 0.836);
+}
+
+
+/*xs----Extra small*/
+@media screen and (min-width:320px){
+}
+/*sm----small (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .Registro label{
+        color: white;
+        font-size: 1rem;
+    }
+    #botonLog{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr .5fr;
+        grid-template-areas:"buttonA buttonA"
+                            "linkB linkC";
+    }
+}
+/*md----medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+    #Contenedor{
+        left: 18%;
+        right: 18%;              
+    }
+}
+/*lg----large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { }
+/*xl----Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    #Contenedor{
+        left: 20%;
+        right: 20%;              
+    }
+}

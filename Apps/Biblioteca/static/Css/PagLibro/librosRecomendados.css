@@ -1,0 +1,115 @@
+#divRecomendados{
+    position: relative;
+    width: 100%;
+}
+#divRecomendados .MS-content{
+    margin-left: 5%;margin-right: 5%;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#divRecomendados .MS-content .item{
+    display: inline-block;
+    height: 100%;  
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+    white-space: normal;
+    background-color: #fafafa;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    width: 50%;
+}
+#divRecomendados .MS-content .item:hover{       
+    box-shadow: 2px 2px 4px 2px rgba(140, 127, 255, 0.808);
+}
+
+#divRecomendados .MS-controls button{
+    display: none;
+    position: absolute;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    outline: 0;
+    top: 35px;
+}
+
+#divRecomendados .MS-controls button:hover{
+    cursor: pointer;
+}
+
+#divRecomendados .MS-controls .MS-left{
+    left: -2px;
+}
+
+#divRecomendados .MS-controls .MS-right{
+    right: -2px;
+}
+
+@media (min-width: 992px){
+    #divRecomendados .MS-content .item{
+        width: 20%;
+    }
+}
+
+@media (min-width: 768px){
+    #divRecomendados .MS-content .item{
+        width: 33.3333%;
+    }
+}
+
+@media (min-width: 578px){
+
+    #divRecomendados .MS-content .item{
+        width: 50%;
+    }
+
+    #divRecomendados .MS-controls button{
+        display: block;
+    }
+    #divRecomendados .MS-controls .MS-left{
+        left: 10px;
+    }
+
+    #divRecomendados .MS-controls .MS-right {
+        right: 10px;
+    }
+}
+
+@media (min-width:578px){
+    #divRecomendados{
+        border-style: solid;
+        border-top-width: 1px;border-right-width: 0;border-left-width: 0;border-bottom-width: 0;
+        border-top-color: rgb(179, 36, 36);
+    }
+}
+
+/*estrellas*/
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;    
+  }
+   
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+  }
+   
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 50%;
+  }
+   
+  .stars-inner::before{
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+  }
+
+
+
